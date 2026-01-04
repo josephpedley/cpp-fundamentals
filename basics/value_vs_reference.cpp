@@ -41,3 +41,23 @@ int main() {
 // Passing by value copies
 // Passing by reference aliases
 // Passing by pointer aliases indirectly
+
+
+// ======================
+// VISUAL REPRESENTATION
+// ======================
+
+// Memory before function calls:
+// a: 0x1000 → [1]
+// b: 0x1004 → [2]  
+// c: 0x1008 → [3]
+
+// During by_value(a):
+// x: 0x1010 → [1] ← COPY of a's value
+
+// During by_reference(b):
+// x is just another name for memory at 0x1004
+
+// During by_pointer(&c):
+// x: 0x1020 → [0x1008] ← ADDRESS of c
+// *x accesses memory at 0x1008
